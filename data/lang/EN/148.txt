@@ -1,0 +1,5 @@
+This is the ending room of
+this tech demo. Thanks for
+testing out the engine.
+
+(Press E to continue)

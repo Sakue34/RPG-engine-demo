@@ -1,0 +1,5 @@
+Use the W A S D keys on your
+keyboard to move your character 
+around.
+
+(Press E to continue)
