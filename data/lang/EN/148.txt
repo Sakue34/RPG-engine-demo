@@ -1,0 +1,5 @@
+This is the ending room.
+Thanks for testing out 
+the framework.
+
+(Press E to continue)

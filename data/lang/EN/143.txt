@@ -1,0 +1,8 @@
+You:
+I've found a sword!
+This one looks very sturdy,
+and it's quite fancy.
+It's surely not as old as 
+those ruins...
+
+(Press E to continue)
