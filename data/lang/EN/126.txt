@@ -1,8 +1,0 @@
-Vital strength of your character
-is represented as Health Points
-(HP). Taking damage from enemies
-and environment reduces current 
-HP value. If your HP reaches 0,
-you die.
-
-(Press E to continue)

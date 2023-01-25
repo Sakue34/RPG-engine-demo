@@ -1,6 +1,0 @@
-You can interact with objects
-by pressing the key E on your
-keyboard while your character
-faces the object.
-
-(Press E to continue)

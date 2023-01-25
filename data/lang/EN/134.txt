@@ -1,5 +1,0 @@
-You:
-This bridge looks...
-questionably safe.
-
-(Press E to continue)

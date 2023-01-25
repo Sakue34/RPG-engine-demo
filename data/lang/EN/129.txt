@@ -1,5 +1,0 @@
-Use the spacebar to execute melee
-attack. Your atack will be directed
-in the direction of your character.
-
-(Press E to continue)

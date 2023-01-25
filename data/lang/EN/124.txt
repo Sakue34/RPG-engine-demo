@@ -1,6 +1,0 @@
-Press the key Enter to execute
-dash. You will dash in the
-direction your character is 
-facing, or moving.
-
-(Press E to continue)

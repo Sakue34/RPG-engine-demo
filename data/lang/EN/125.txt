@@ -1,7 +1,0 @@
-You are invulnerable during
-the dash. Dashing costs stamina, 
-which regenerates over time when
-no stamina-consuming actions
-are executed for a few seconds.
-
-(Press E to continue)

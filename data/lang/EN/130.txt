@@ -1,7 +1,0 @@
-Note that each swing has it's
-cooldown, represented by refilling
-icon of your currently equipped
-weapon at the bottom right corner
-of the screen.
-
-(Press E to continue)
