@@ -107,3 +107,11 @@ public:
 	void PopulateDynamics() override;
 	cMap_Cave1(cEngine* _engine);
 };
+
+class cMap_Cep : public cMap
+{
+public:
+	void PopulateDynamics() override;
+	void FirstEnter() override;
+	cMap_Cep(cEngine* _engine);
+};

@@ -439,3 +439,22 @@ cMap_Cave1::cMap_Cave1(cEngine* _engine) : cMap(_engine)
 	Create(L"data/maps/cave1.txt", "cave1", cData::get().GetSprite("tileset1"));
 	PopulateDynamics();
 }
+
+cMap_Cep::cMap_Cep(cEngine* _engine) : cMap(_engine)
+{
+	Create(L"data/maps/cep.txt", "cep", cData::get().GetSprite("tileset1"));
+	PopulateDynamics();
+}
+
+void cMap_Cep::PopulateDynamics()
+{
+	vecDyn.push_back(new cBat(engine, 10.0f, 10.0f));
+}
+
+void cMap_Cep::FirstEnter()
+{
+	bHasBeenEntered = true;
+	engine->ScriptEngine.AddScript(new cScript_DevGiveAndEqiupWeapon(engine, new cBasic_Sword));
+	engine->ScriptEngine.AddScript(new cScript_SetMaxStamina(engine, 20.0f));
+	engine->ScriptEngine.AddScript(new cScript_SetMaxHP(engine->Player(), 22.0f));
+}

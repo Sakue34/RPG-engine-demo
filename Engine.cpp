@@ -200,62 +200,6 @@ void cEngine::DisplayFrontMessage()
 	}
 }
 
-void cEngine::ReadConfigFile()
-{
-	std::ifstream config;
-	config.open("config.ini", std::ios::in);
-	if (config.good())
-	{
-		//jêzyk:
-		std::string sTempLang;
-		std::getline(config, sTempLang);
-		int nReadState = 0;
-		for (unsigned i = 0; i < sTempLang.length(); i++)
-		{
-			if(nReadState == 0)
-				if (sTempLang[i] == ' ')
-				{
-					nReadState++;
-					continue;
-				}
-			if(nReadState == 1)
-				if (sTempLang[i] == '=')
-				{
-					nReadState++;
-					continue;
-				}
-			if (nReadState == 2)
-				if (sTempLang[i] == ' ')
-				{
-					nReadState++;
-					continue;
-				}
-			if (nReadState == 3)
-				if (sTempLang[i] != ' ')
-				{
-					nReadState++;
-					config_sLang += sTempLang[i];
-					continue;
-				}
-			if (nReadState == 4)
-				if (sTempLang[i] != ' ')
-				{
-					nReadState++;
-					config_sLang += sTempLang[i];
-					break;
-				}
-		}
-	
-	}
-	else
-	{
-		//niepoprawny odczyt, zastosuj domyœlne ustawienia
-		config_sLang = "EN";
-	}
-
-	config.close();
-}
-
 void cEngine::ClearAllDialogs()
 {
 	m_bShowDialog = false;
@@ -474,14 +418,11 @@ void cEngine::ChangeMap(std::string mapName, float _px, float _py)
 
 bool cEngine::OnUserCreate() 
 {
-	//odczyt parametrów z pliku konfiguracyjnego
-	ReadConfigFile();
-
 	//ziarno generatora liczb pseudolosowych
 	srand((unsigned)time(NULL));
 
 	//³adowanie dialogów
-	cData::get().LoadDialogs(config_sLang);
+	cData::get().LoadDialogs();
 
 	//³adowanie grafik
 	cData::get().LoadSprites();
@@ -515,13 +456,7 @@ bool cEngine::OnUserCreate()
 	SetPixelMode(olc::Pixel::ALPHA); // domyœlny tryb renderowania
 
 	//za³adowanie mapy
-	//ChangeMap("intro1", 15.0f, 12.0f); // - fina³owe!
-	//ChangeMap("intro3", 2.0f, 3.5f); // dev - test daleszej czêœci gry
-	//ChangeMap("intro5", 20.0f, 1.0f); // dev - test daleszej czêœci gry
-	//ChangeMap("intro6", 1.0f, 26.0f); // dev - test daleszej czêœci gry
-	ChangeMap("plains1", 1.0f, 23.0f); // dev - test daleszej czêœci gry
-	//ChangeMap("village1", 10.0f, 5.0f); // dev - test daleszej czêœci gry
-	//ChangeMap("cave1", 7.0f, 7.0f); // dev - test daleszej czêœci gry
+	ChangeMap("intro1", 15.0f, 12.0f); // - fina³owe!
 
 	//zasiêg detekcji kolizji dynamicznej 
 	float fCollisionDetectionDistance = 3.0f;
@@ -557,7 +492,6 @@ bool cEngine::OnUserUpdate(float fElapsedTime)
 		if (!UpdateTitleMenu(fElapsedTime))
 			return false;
 		break;
-	//case ...:
 	}
 
 	return true;

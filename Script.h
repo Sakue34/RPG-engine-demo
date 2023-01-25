@@ -38,7 +38,7 @@ public:
 	}
 
 	void AddScriptInFront(cScript* script)  // dodaje nowy skrypt z przodu kolejki (wykorzystywany np. w makrach które wykonuj¹ kilka skryptów)
-	{										// 
+	{
 		listScripts.push_front(script);
 	}
 
@@ -51,5 +51,4 @@ public:
 
 public:
 	cScriptEngine();
-
 };

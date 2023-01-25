@@ -42,7 +42,7 @@ public:
 	float fHeight;
 	bool bSolidVsSolid;	// podleganie kolizji statycznej
 	bool bSolidVsDynamic;// i dynamicznej
-	short nLayer;	//warstwa od której zale¿y w jakiej kolejnoœci obiekt jest rysowany (0 - przedmioty na ziemii i elementy mapy, 1 - zw³oki/nieprzytomni, 2 - domyœlna, 3 - lataj¹ce, 4 - emotki)
+	short nLayer;	// warstwa od której zale¿y w jakiej kolejnoœci obiekt jest rysowany (0 - przedmioty na ziemii i elementy mapy, 1 - zw³oki/nieprzytomni, 2 - domyœlna, 3 - lataj¹ce, 4 - emotki)
 	bool bFriendly; // czy obiekt jest przyjazny graczowi
 	bool bIsProjectile; // czy obiekt jest pociskiem
 	bool bIsKnockbacked; // czy obiekt jest w powietrzu
@@ -54,9 +54,9 @@ public:
 	virtual void Knockback(float x, float y, float time) { }	// "zwyk³y" obiekt dynamiczny nie posiada obs³ugi odrzutu 
 	virtual void ReceiveDamage(float dmg) { }					// ani bycia zaatakowanym
 	virtual void DrawSelf(float fOffsetX, float fOffsetY);
-	virtual bool OnInteract(cDynamic* player, INTERACT_NATURE nature, cDynamic* object) { return false; }	//funkcja powinna zwróciæ true jeœli g³ówna pêtla gry ma siê zacz¹æ
+	virtual bool OnInteract(cDynamic* player, INTERACT_NATURE nature, cDynamic* object) { return false; }	// funkcja powinna zwróciæ true jeœli g³ówna pêtla gry ma siê zacz¹æ
 																											// na nowo po wykonaniu interakcji (np. teleportacja i zmiana mapy)
-	//aktualizacja obiektu wywo³ywana w ka¿dej klatce
+	// aktualizacja obiektu wywo³ywana w ka¿dej klatce
 	virtual void Update(float fElapsedTime, cDynamic* player = nullptr) {};				
 	//////////////////////////////////////////////////////////////////////////////
 
@@ -136,7 +136,7 @@ public:
 	void DrawSelf(float fOffsetX, float fOffsetY);
 	virtual void Update(float fElapsedTime, cDynamic* player);
 
-	// domyœlne AI - nie robi nic, przekazuje dalej potencjalne nowe prêdkoœci w niezmienionej formie - takie AI ma tylko gracz i obiekty których nie da siê zatakowaæ
+	// domyœlne AI - nie robi nic, przekazuje dalej potencjalne nowe prêdkoœci w niezmienionej formie - takie AI ma tylko gracz i obiekty których nie da siê zaatakowaæ
 	virtual void UpdateAI(float fElapsedTime, cDynamic* player) {	fNewvx = vx;	fNewvy = vy;	}
 	void ClampWalkingVel(); // wa¿ne: aktualizuje skalarn¹ szybkoœæ obiektu
 	virtual void Knockback(float x, float y, float time); // odrzut

@@ -3,8 +3,6 @@
 
 bool cEngine::UpdateTitleMenu(float fElapsedTime)
 {
-	//DrawRect(0, 0, ScreenWidth(), ScreenHeight(), olc::BLACK);
-
 	if (IsFocused())
 	{
 		if (GetKey(olc::Key::ENTER).bPressed || GetKey(olc::Key::SPACE).bPressed)
@@ -14,9 +12,6 @@ bool cEngine::UpdateTitleMenu(float fElapsedTime)
 			if (GetKey(olc::Key::ENTER).bPressed || GetKey(olc::Key::SPACE).bPressed)
 				fInitialDimmTime = fStartDimmingDuration;
 	}
-
-	//DrawSprite(0, 0, cData::get().GetSprite("title background"));
-	//DrawSprite(0, 0, cData::get().GetSprite("title forest"));
 
 	if (bTitleStart)
 	{
@@ -33,7 +28,7 @@ bool cEngine::UpdateTitleMenu(float fElapsedTime)
 		if (fInitialDimmTime == fStartDimmingDuration)
 		{
 			nDimm = (int8_t)255;
-			GS_gamestate = GS_LOCAL_MAP;	// start gry
+			GS_gamestate = GS_LOCAL_MAP;
 		}
 	}
 	
@@ -49,10 +44,9 @@ bool cEngine::UpdateTitleMenu(float fElapsedTime)
 	DrawPartialSprite(0, 0, cData::get().GetSprite("title background"), (int)fTitleScrollOffsetBG, 0, 224, 192);
 	DrawPartialSprite(0, 0, cData::get().GetSprite("title forest"), (int)fTitleScrollOffsetForest, 0, 224, 192);
 
-	Draw16x16Text("RPG ENGINE", 16, 32, TXT_WHITE);
-	Draw16x16Text("V 0.16.1", 16, 48, TXT_WHITE);
-	DrawText("by Sakue", 16, 64, TXT_WHITE);	
-	DrawText(/*"August 2019"*/ cData::get().GetDialog("140")[0], ScreenWidth() - (21 + (cData::get().GetDialog("140")[0].length() * 6)), 64, TXT_WHITE);
+	Draw16x16Text("RPG DEMO", 16, 32, TXT_WHITE);
+	DrawText("by Szymon Ciszewski", 16, 64, TXT_WHITE);	
+	DrawText(cData::get().GetDialog("140")[0], ScreenWidth() - (21 + (cData::get().GetDialog("140")[0].length() * 6)), 64, TXT_WHITE);
 	DrawText(cData::get().GetDialog("100")[0], 8, ScreenHeight() - 16, TXT_WHITE);
 
 	// wygaszenie ekranu

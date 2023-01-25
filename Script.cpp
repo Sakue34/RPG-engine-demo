@@ -12,25 +12,25 @@ void cScriptEngine::UpdateScripts(float fElapsedTime)
 			listScripts.front()->Start();
 
 			// ustaw mo¿liwoœæ ruchu gracza w trakcie wykonywania skryptu
-			// w zale¿noœci od w³snoœci skryptu
+			// w zale¿noœci od w³asnoœci skryptu
 			if (listScripts.front()->bAllowForUserControl == false)
 				bPlayerInControl = false;
 			else
 				bPlayerInControl = true;
 
-			//ustaw zamro¿enie czasu w zale¿noœci od skryptu
+			// ustaw zamro¿enie czasu w zale¿noœci od skryptu
 			if (listScripts.front()->bFreezeTime == false)
 				bTimeIsFreezed = false;
 			else
 				bTimeIsFreezed = true;
 
-			//ustaw mo¿liwoœæ pominiêcia skryptu wy³¹cznie manualnie
+			// ustaw mo¿liwoœæ pominiêcia skryptu wy³¹cznie manualnie
 			if (listScripts.front()->bWaitForSkip == false)
 				bWaitForManualSkip = false;
 			else
 				bWaitForManualSkip = true;
 
-			//ustaw œledzenie gracza kamer¹
+			// ustaw œledzenie gracza kamer¹
 			if (listScripts.front()->nCameraOnPlayer == cScript::CAMERA_STICK_TO_PLAYER)
 				bCameraFollowsPlayer = true;
 			

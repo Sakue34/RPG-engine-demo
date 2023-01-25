@@ -70,6 +70,7 @@ void cData::LoadMaps(cEngine* engine)
 	load(new cMap_Village1(engine));
 	load(new cMap_Plains2(engine));
 	load(new cMap_Cave1(engine));
+	load(new cMap_Cep(engine));
 }
 
 void cData::LoadItemSprites()
@@ -85,9 +86,9 @@ void cData::LoadItemSprites()
 	load("Steel sword", "data/gfx/items/steel_sword.png");
 }
 
-void cData::LoadDialogs(std::string sLang)
+void cData::LoadDialogs()
 {
-	std::string sFilePathPrefix = "data/lang/" + sLang + "/";
+	std::string sFilePathPrefix = "data/lang/EN/";
 
 	auto load = [&](std::string sNameAndFileName)
 	{

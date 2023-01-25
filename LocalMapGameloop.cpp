@@ -768,11 +768,6 @@ bool cEngine::UpdateLocalMap(float fElapsedTime) // tryb gry 1 - mapa lokalna
 		if (m_currentMap->vecDyn[i]->nLayer == 2)
 			m_currentMap->vecDyn[i]->DrawSelf(fOffsetX, fOffsetY);
 
-	// póŸniej narysuj obiekty warstwy 3 (obiekty "lataj¹ce", b¹dŸ po³o¿one ponad reszt¹ obiektów dynamicznych)
-	for (unsigned int i = 0; i < m_currentMap->vecDyn.size(); i++)
-		if (m_currentMap->vecDyn[i]->nLayer == 3)
-			m_currentMap->vecDyn[i]->DrawSelf(fOffsetX, fOffsetY);
-
 	// rysowanie mapy warstwa trzecia: warstwa która zawsze rysowana jest nad obiektami dynamicznymi
 	// np. górne czêœci filarów które s¹ "przed" stworami
 	for (int x = 0; x < nVisibleTilesX + 1; x++)
@@ -790,6 +785,11 @@ bool cEngine::UpdateLocalMap(float fElapsedTime) // tryb gry 1 - mapa lokalna
 			}
 		}
 	}
+
+	// póŸniej narysuj obiekty warstwy 3 (obiekty "lataj¹ce", b¹dŸ po³o¿one ponad reszt¹ obiektów dynamicznych)
+	for (unsigned int i = 0; i < m_currentMap->vecDyn.size(); i++)
+		if (m_currentMap->vecDyn[i]->nLayer == 3)
+			m_currentMap->vecDyn[i]->DrawSelf(fOffsetX, fOffsetY);
 
 	//na koniec narysuj obiekty dynamiczne warstwy 4 (bañki emotikony)
 	for (unsigned int i = 0; i < m_currentMap->vecDyn.size(); i++)

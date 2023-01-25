@@ -3,7 +3,7 @@
 #include "Data.h"
 #include "All_Scripts.h"
 
-//Miecz gracza (obiekt dynamiczny)
+// Miecz gracza (obiekt dynamiczny)
 cPlayerMelee::cPlayerMelee(cEngine* _engine, float _px, float _py) 
 	: cDynamic(_engine, "player melee", _px, _py, cData::get().GetSprite("player melee"), false, false, true)
 {
@@ -52,7 +52,7 @@ void cPlayerMelee::DrawSelf(float fOffsetX, float fOffsetY)
 	}
 }
 
-//Bañka-emotikona
+// Bañka-emotikona
 cEmoteBubble::cEmoteBubble(cEngine* engine, cDynamic* _parent, EMOTE_BUBBLE _type, bool _loopanimation, float _lifetime) :
 	cDynamic(engine, "emote bubble", _parent->px, _parent->py - 1.0f, cData::get().GetSprite("emote bubble"), false, false)
 {
@@ -141,7 +141,7 @@ void cEmoteBubble::DrawSelf(float fOffsetX, float fOffsetY)
 	}
 }
 
-//Teleporter:
+// Teleporter
 cTeleporter::cTeleporter(cEngine* _engine, float _px, float _py, std::string map, float _x, float _y)
 	: cDynamic(_engine, "teleporter", _px, _py, nullptr)
 {
@@ -178,7 +178,7 @@ bool cTeleporter::OnInteract(cDynamic* player, INTERACT_NATURE nature, cDynamic*
 	return false;
 }
 
-//Aktywator skryptów 1 - cMap_Intro1
+// Aktywator skryptów 1 - cMap_Intro1
 cMap_Intro1_ScriptActivator1::cMap_Intro1_ScriptActivator1(cEngine* _engine, float _px, float _py) 
 	: cDynamic(_engine, "intro1 script1",_px,_py, nullptr, false, false)
 {
@@ -204,7 +204,7 @@ bool cMap_Intro1_ScriptActivator1::OnInteract(cDynamic* player, INTERACT_NATURE 
 	return false;
 }
 
-//Aktywator skryptów 2 - cMap_Intro1
+// Aktywator skryptów 2 - cMap_Intro1
 cMap_Intro1_ScriptActivator2::cMap_Intro1_ScriptActivator2(cEngine* _engine, float _px, float _py)
 	: cDynamic(_engine, "intro1 script2", _px, _py, nullptr, false, false)
 {
@@ -229,7 +229,7 @@ bool cMap_Intro1_ScriptActivator2::OnInteract(cDynamic* player, INTERACT_NATURE 
 
 	return false;
 }
-//Aktywator skryptów: Intro 6
+// Aktywator skryptów - cMap_Intro6
 cMap_Intro6_ScriptActivator1::cMap_Intro6_ScriptActivator1(cEngine* _engine, float _px, float _py) 
 	: cDynamic(_engine, "intro6 script1", _px, _py, nullptr, false, false)
 {
@@ -359,12 +359,12 @@ void cSpikes::DrawSelf(float fOffsetX, float fOffsetY)
 		(int)(fWidth * 16), (int)(fHeight * 16));
 }
 
-//Pochodnia
+// Pochodnia
 cTorch::cTorch(cEngine* _engine, float _px, float _py) : c3FrameAnimatedDynamic(_engine, "torch", _px, _py, cData::get().GetSprite("torch"), true, true)
 {
 }
 
-//¯elazne drzwi
+// ¯elazne drzwi
 cIronDoor::cIronDoor(cEngine* _engine, float _px, float _py) 
 	: cOpenable(_engine, _px, _py, cData::get().GetSprite("iron door"), "iron door", true, true)
 {
@@ -427,7 +427,7 @@ void cIronDoor::Update(float fElapsedTime, cDynamic* player)
 	}
 }
 
-//Zakmniête ¿elazne drzwi
+// Zakmniête ¿elazne drzwi
 cLockedIronDoor::cLockedIronDoor(cEngine* _engine, float _px, float _py)
 	: cOpenable(_engine, _px, _py, cData::get().GetSprite("iron door"), "iron door", true, true)
 {
@@ -502,7 +502,7 @@ bool cLockedIronDoor::OnInteract(cDynamic* player, INTERACT_NATURE nature, cDyna
 	return false;
 }
 
-//Skrzynia:
+// Skrzynia
 cChest::cChest(cEngine* _engine, float _px, float _py)
 	: cOpenable(_engine, _px, _py, cData::get().GetSprite("chest"), "chest", true, true)
 {
@@ -528,7 +528,7 @@ void cChest::FirstOpen()
 	}
 }
 
-//Szkielet:
+// Szkielet
 cSkeleton::cSkeleton(cEngine* engine, float _px, float _py) 
 	: cDynamicCreature(engine, "skeleton", _px, _py, cData::get().GetSprite("skeleton"), true, true, 0.625f, 0.9375f, STATE_STANDING, 5.0f, false)
 {
@@ -541,7 +541,7 @@ void cSkeleton::UpdateAI(float fElapsedTime, cDynamic* player)
 	AI_SimpleFollowHostile(fElapsedTime, player);
 }
 
-//Nietoperz:
+// Nietoperz
 cBat::cBat(cEngine* engine, float _px, float _py)
 	: cDynamicCreature(engine, "bat", _px, _py, cData::get().GetSprite("bat"), true, false, 1.0f, 0.8125f, STATE_WALKING, 5.0f, false, 3)
 {
@@ -556,7 +556,7 @@ cBat::cBat(cEngine* engine, float _px, float _py)
 	fProneToKnockbackMultiplier = 1.2f;
 }
 
-//Tabliczka:
+// Tabliczka
 void cBat::UpdateAI(float fElapsedTime, cDynamic* player)
 {
 	AI_SimpleFollowHostile(fElapsedTime, player);
@@ -576,7 +576,7 @@ bool cSignpost::OnInteract(cDynamic* player, INTERACT_NATURE nature, cDynamic* t
 	return false;
 }
 
-//Schody w dó³
+// Schody w dó³
 
 cStairwayDown::cStairwayDown(cEngine* engine, float _px, float _py, std::string map, float _x, float _y) 
 	: cDynamic(engine, "stairway down", _px, _py, cData::get().GetSprite("stairway down"), true, false)
@@ -601,7 +601,7 @@ bool cStairwayDown::OnInteract(cDynamic* player, INTERACT_NATURE nature, cDynami
 	return false;
 }
 
-//Schody do góry
+// Schody do góry
 
 cStairwayUp::cStairwayUp(cEngine* engine, float _px, float _py, std::string map, float _x, float _y)
 	: cDynamic(engine, "stairway up", _px, _py, cData::get().GetSprite("stairway up"), true, true)
@@ -626,7 +626,7 @@ bool cStairwayUp::OnInteract(cDynamic* player, INTERACT_NATURE nature, cDynamic*
 	return false;
 }
 
-//Kobieta NPC
+// Kobieta NPC
 cFemale::cFemale(cEngine* engine, float _px, float _py) 
 	: cDynamicCreature(engine, "female", _px, _py, cData::get().GetSprite("female"), true, true, 0.875f, 1.0f, STATE_STANDING, 2.5f, true)
 {
@@ -660,9 +660,8 @@ bool cFemale::OnInteract(cDynamic* player, INTERACT_NATURE nature, cDynamic* tar
 	return false;
 }
 
-//Slime
-
-cSlime::cSlime(cEngine* engine, float _px, float _py) : cDynamicCreature(engine, "slime",_px, _py, cData::get().GetSprite("slime"),true, true, 1.0f, 0.8125f, STATE_STANDING, 6.0f, false)
+// Slime
+cSlime::cSlime(cEngine* engine, float _px, float _py) : cDynamicCreature(engine, "slime",_px, _py, cData::get().GetSprite("slime"), true, true, 1.0f, 0.8125f, STATE_STANDING, 6.0f, false)
 {
 	fMaxWalkingVel = 1.4f;
 	stats.fDmg = 0.6f;
@@ -674,6 +673,5 @@ cSlime::cSlime(cEngine* engine, float _px, float _py) : cDynamicCreature(engine,
 
 void cSlime::UpdateAI(float fElapsedTime, cDynamic* player)
 {
-	// tymczasowe AI dla slime - w domyœle coœ, co zasymuluje "doskoki" w stronê gracza
 	AI_SimpleFollowHostile(fElapsedTime, player);
 }

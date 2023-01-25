@@ -31,13 +31,13 @@ public:
 class cPlayerData
 {
 public:
-	float fStamina; //obecna wytrzyma³oœæ
-	float fMaxStamina; //maksymalna wytrzyma³oœæ
-	float fStaminaTimer; //timer czasu po którym zacznie regenerowaæ siê wytrzyma³oœæ 
-	float fStaminaRegenDelay; //czas po którym zacznie regenerowaæ siê stamina
-	float fStaminaDashCost; //koszt punktów wytrzyma³oœci potrzebny do wykonania doskoku
-	float fStaminaRegenPerSecond; //regeneracja punktów wytrzyma³oœci w ci¹gu jednej sekundy 
-	float fDashVelocityMultiplier; //mno¿nik prêdkoœci doskoków
+	float fStamina; // obecna wytrzyma³oœæ
+	float fMaxStamina; // maksymalna wytrzyma³oœæ
+	float fStaminaTimer; // timer czasu po którym zacznie regenerowaæ siê wytrzyma³oœæ 
+	float fStaminaRegenDelay; // czas po którym zacznie regenerowaæ siê stamina
+	float fStaminaDashCost; // koszt punktów wytrzyma³oœci potrzebny do wykonania doskoku
+	float fStaminaRegenPerSecond; // regeneracja punktów wytrzyma³oœci w ci¹gu jednej sekundy 
+	float fDashVelocityMultiplier; // mno¿nik prêdkoœci doskoków
 	float fDashExecutionTime; // jak d³ugo trwa doskok gracza ( wa¿ne:  1. gracz jest nieœmiertelny w trakcie doskoku 2. im krótszy czas tym krótszy doskok )
 public:
 	cWeapon* currentWeapon = nullptr;

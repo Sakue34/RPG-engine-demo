@@ -22,9 +22,9 @@ public:
 
 private:
 	cMap* m_currentMap;
-	float m_fStaticAnimTime;		//czas aktualizacji animacji mapy
-	float m_fStacicAnimInterval;	//okres aktualizacji animacji mapy
-	short m_nStaticAnimFrame;		//klatka animacji mapy
+	float m_fStaticAnimTime;		// czas aktualizacji animacji mapy
+	float m_fStacicAnimInterval;	// okres aktualizacji animacji mapy
+	short m_nStaticAnimFrame;		// klatka animacji mapy
 	float fCollisionDetectionDistancePow2;
 	olc::Sprite* m_sprFont4x4;
 	olc::Sprite* m_sprFont4x5;
@@ -50,11 +50,10 @@ private:
 	void DrawFrontDialog(int x, int y); // wyœwietlanie dialogu z obramówik¹
 	void DisplayFrontMessage(); // wyœwietlanie komunikatu na œrodku z obramówk¹
 
-	//odczyt danych z pliku konfiguracyjnego i parametry które s¹ odczytywane
-	void ReadConfigFile();
+	// odczyt danych z pliku konfiguracyjnego i parametry które s¹ odczytywane
 	std::string config_sLang;
 
-	//menu g³ówne:
+	// menu g³ówne:
 	float fTitleScrollSpeedBG;
 	float fTitleScrollSpeedForest;
 	float fTitleScrollOffsetBG;
@@ -135,7 +134,6 @@ public:
 	{
 		GS_LOCAL_MAP,
 		GS_TITLE_MENU
-
 	} GS_gamestate;
 
 	bool UpdateLocalMap(float fElapsedTime);
@@ -144,7 +142,7 @@ public:
 public:
 	cEngine()
 	{
-		sAppName = "RPG Engine Demo v0.16.1 by Sakue";
+		sAppName = "RPG Demo by Szymon Ciszewski";
 		m_currentMap = nullptr;
 		pPlayer = nullptr;
 		bPause = false;

@@ -36,7 +36,7 @@ bool cScript_MoveTo::Update(float fElapsedTime)
 	if (dynamic == nullptr)
 		return true;
 
-	//aktualizacja timera
+	// aktualizacja timera
 	fTime += fElapsedTime;
 
 	// v = s/t		prêdkoœæ = droga / czas
@@ -49,7 +49,7 @@ bool cScript_MoveTo::Update(float fElapsedTime)
 		dynamic->px = fTargetX;
 		dynamic->py = fTargetY;
 
-		//wyzerowanie prêdkoœci obiektu po zakoñczeniu ruchu przez skrypt
+		// wyzerowanie prêdkoœci obiektu po zakoñczeniu ruchu przez skrypt
 		dynamic->vx = 0.0f;
 		dynamic->vy = 0.0f;
 		dynamic->ZeroNewVelocities();
@@ -79,7 +79,7 @@ void cScript_DimmScreenFor::Start()
 
 bool cScript_DimmScreenFor::Update(float fElapsedTime)
 {
-	//aktualizacja timera
+	// aktualizacja timera
 	fTime += fElapsedTime;
 
 	if (fTime < fSpeed)
@@ -169,7 +169,6 @@ void cScript_Wait::Start()
 
 bool cScript_Wait::Update(float fElapsedTime)
 {
-	//aktualizacja timera
 	fTime += fElapsedTime;
 
 	if (fTime >= fExecutionTime)
@@ -217,7 +216,6 @@ void cScript_DimmScreen::Start()
 
 bool cScript_DimmScreen::Update(float fElapsedTime)
 {
-	//aktualizacja timera
 	fTime += fElapsedTime;
 
 	if (fTime < fExecutionTime)
@@ -259,7 +257,6 @@ void cScript_DimmScreenPartially::Start()
 
 bool cScript_DimmScreenPartially::Update(float fElapsedTime)
 {
-	//aktualizacja timera
 	fTime += fElapsedTime;
 
 	if (fTime < fExecutionTime)
@@ -290,7 +287,6 @@ void cScript_BrightenScreen::Start()
 
 bool cScript_BrightenScreen::Update(float fElapsedTime)
 {
-	//aktualizacja timera
 	fTime += fElapsedTime;
 
 	if (engine->nDimm == 0)
@@ -334,7 +330,6 @@ void cScript_BrightenScreenPartially::Start()
 
 bool cScript_BrightenScreenPartially::Update(float fElapsedTime)
 {
-	//aktualizacja timera
 	fTime += fElapsedTime;
 
 	if (engine->nDimm == 0)
@@ -368,10 +363,6 @@ void cScript_ChangeMap::Start()
 	if (map != nullptr)
 	{
 		engine->ChangeMap(sMap, x, y);
-	}
-	else
-	{
-		// handle error
 	}
 
 	bHasStarted = true;
